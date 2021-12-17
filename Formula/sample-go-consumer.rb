@@ -5,29 +5,39 @@
 class SampleGoConsumer < Formula
   desc "Kafka Consumer for Protobuf"
   homepage "https://github.com/Khushbukela/sample-go-consumer"
-  version "100.0.2"
+  version "100.0.3"
 
   on_macos do
-    url "https://github.com/khushbukela/sample-go-consumer/releases/download/100.0.2/sample-go-consumer_Darwin_all.zip"
-    sha256 "f1363da8e98c7d911b1acf120b98eb1c855616412f283d6478d443883a87a790"
-
-    def install
-      bin.install "sample-go-consumer"
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/khushbukela/sample-go-consumer/releases/download/100.0.2/sample-go-consumer_Linux_arm64.zip"
-      sha256 "073bafd7629bc568144a5dfb21b9f37bcfa078665c381a1dbdbd1653c62596f9"
+    if Hardware::CPU.arm?
+      url "https://github.com/khushbukela/sample-go-consumer/releases/download/100.0.3/sample-go-consumer_100.0.3_darwin_arm64.tar.gz"
+      sha256 "cae4a99afc07d4de5e567e505a88079f94cf613ea43360ffd9f03b586f042f32"
 
       def install
         bin.install "sample-go-consumer"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/khushbukela/sample-go-consumer/releases/download/100.0.2/sample-go-consumer_Linux_x86_64.zip"
-      sha256 "a2e96ffc2478a8499d864a080aa0c7add0fe181ab14cd32a105eb280b17c4ce8"
+      url "https://github.com/khushbukela/sample-go-consumer/releases/download/100.0.3/sample-go-consumer_100.0.3_darwin_amd64.tar.gz"
+      sha256 "48dc2107bd798bc9c5a31c7f15c6ef4f5d7dca13552fafa0f536fff7a19d6724"
+
+      def install
+        bin.install "sample-go-consumer"
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/khushbukela/sample-go-consumer/releases/download/100.0.3/sample-go-consumer_100.0.3_linux_arm64.tar.gz"
+      sha256 "319711727c8dc47ecc7c4707e84ec34aabd0e0ccb7b209004687f06b9546a780"
+
+      def install
+        bin.install "sample-go-consumer"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/khushbukela/sample-go-consumer/releases/download/100.0.3/sample-go-consumer_100.0.3_linux_amd64.tar.gz"
+      sha256 "d580da21a12eeaaf2686141b1305bd22ea0e8996c71b7f5f46cc21cf34c853a8"
 
       def install
         bin.install "sample-go-consumer"
