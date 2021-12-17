@@ -5,11 +5,11 @@
 class SampleGoConsumer < Formula
   desc "Kafka Consumer for Protobuf"
   homepage "https://github.com/Khushbukela/sample-go-consumer"
-  version "12.1.10"
+  version "12.1.11"
 
   on_macos do
-    url "https://github.com/khushbukela/sample-go-consumer/releases/download/12.1.10/sample-go-consumer_Darwin_all.zip"
-    sha256 "3f5f188239fab7be4f1efe87c04c718815b0136d04facacbb45cfd79febfe923"
+    url "https://github.com/khushbukela/sample-go-consumer/releases/download/12.1.11/sample-go-consumer_Darwin_all.zip"
+    sha256 "3607c9bd57b0e340de54170c4e805cc020cd772edb9f196226a1c4c9dfb0fcce"
 
     def install
       bin.install "sample-go-consumer"
@@ -18,16 +18,16 @@ class SampleGoConsumer < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/khushbukela/sample-go-consumer/releases/download/12.1.10/sample-go-consumer_Linux_arm64.zip"
-      sha256 "3a32e63f07c36322db56533880473e1cb2783f0ccaaecc84d591cdb19f35d54c"
+      url "https://github.com/khushbukela/sample-go-consumer/releases/download/12.1.11/sample-go-consumer_Linux_arm64.zip"
+      sha256 "364eb289c19ff43eae4ac36e06b913daa10b9bb066e97de10d13f2d4a139867d"
 
       def install
         bin.install "sample-go-consumer"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/khushbukela/sample-go-consumer/releases/download/12.1.10/sample-go-consumer_Linux_x86_64.zip"
-      sha256 "92a6be87824a8682bad6c40b5d62c0c9ab8f831a2040e1aac3d060be15854ce6"
+      url "https://github.com/khushbukela/sample-go-consumer/releases/download/12.1.11/sample-go-consumer_Linux_x86_64.zip"
+      sha256 "37a22678fc77d953f82fc3a890f5143161d2437217a22725a0961881002149f1"
 
       def install
         bin.install "sample-go-consumer"
