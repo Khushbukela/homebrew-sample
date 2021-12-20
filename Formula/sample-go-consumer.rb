@@ -6,11 +6,11 @@ require_relative "lib/private"
 class SampleGoConsumer < Formula
   desc "Kafka Consumer for Protobuf"
   homepage "https://github.com/Khushbukela/sample-go-consumer"
-  version "200.0.18"
+  version "200.0.20"
 
   on_macos do
-    url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.18/sample-go-consumer_Darwin_all.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "076139103b1e3c4f750867d11f901fa3ac9976cf3ba134a85c3f079f75d8297d"
+    url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.20/sample-go-consumer_Darwin_all.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "c926b33ddceb6a4ae7082e5361b3e939f223c25c9151d865455269968908bf39"
 
     def install
       bin.install "sample-go-consumer"
@@ -19,16 +19,16 @@ class SampleGoConsumer < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.18/sample-go-consumer_Linux_arm64.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "67215198461a5566f3bdf0c31fb72dc83d0a9cde7b0ea5f95b04f7ca122b89ee"
+      url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.20/sample-go-consumer_Linux_arm64.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "c7ab529a6a49e8673d36150cd37cf7045bc02ecaf3adf6d710fabd9d2f7965ce"
 
       def install
         bin.install "sample-go-consumer"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.18/sample-go-consumer_Linux_x86_64.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "8b213fba48d9eb7edae920ba1a3060c6aeaa55c2c5b5ff9f2d5b31871dbaf19c"
+      url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.20/sample-go-consumer_Linux_x86_64.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "8c5c953cb3d81626ca9debdc37a8df5c147f1d95c4fc4b0995cd5c72b8215908"
 
       def install
         bin.install "sample-go-consumer"
