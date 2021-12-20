@@ -5,11 +5,11 @@
 class SampleGoConsumer < Formula
   desc "Kafka Consumer for Protobuf"
   homepage "https://github.com/Khushbukela/sample-go-consumer"
-  version "200.0.8"
+  version "200.0.9"
 
   on_macos do
-    url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.8/sample-go-consumer_Darwin_all.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "3efcadacc33b11b93622846bb443312e013027de9771896453bc1ccfc323013d"
+    url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.9/sample-go-consumer_Darwin_all.zip", :using => GitDownloadStrategy
+    sha256 "6969a5a0719d4f4f8be53ae44fd1eb711a32d4f52fa039a7785fa5f918dff6e9"
 
     def install
       bin.install "sample-go-consumer"
@@ -18,16 +18,16 @@ class SampleGoConsumer < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.8/sample-go-consumer_Linux_arm64.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "6d2d675156ca2a328b2766f134a88ff8db7a405f2aa34f1f03a43b28d1d91d1b"
+      url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.9/sample-go-consumer_Linux_arm64.zip", :using => GitDownloadStrategy
+      sha256 "117e3bbbb51fd3c2324000b288c679b2cceaf45aae238ea3157849af356d3d48"
 
       def install
         bin.install "sample-go-consumer"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.8/sample-go-consumer_Linux_x86_64.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "c60bada877871215c1551d464d30cbafab9a0da05bd687530bca6dfe328618a7"
+      url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.9/sample-go-consumer_Linux_x86_64.zip", :using => GitDownloadStrategy
+      sha256 "6156cbbf5ca8d5055f738b16454bbdb0bc801dc00b057b3fa5c5caf5a109aadc"
 
       def install
         bin.install "sample-go-consumer"
