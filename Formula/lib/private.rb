@@ -6,7 +6,7 @@ require "download_strategy"
 # Private Repository. To use it, add
 # `:using => :github_private_repo` to the URL section of
 # your formula. This download strategy uses GitHub access tokens (in the
-# environment variables `HOMEBREW_GITHUB_API_TOKEN`) to sign the request.  This
+# environment variables `GITHUB_TOKEN`) to sign the request.  This
 # strategy is suitable for corporate use just like S3DownloadStrategy, because
 # it lets you use a private GitHub repository for internal distribution.  It
 # works with public one, but in that case simply use CurlDownloadStrategy.
@@ -41,7 +41,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   def set_github_token
     @github_token = ENV["GITHUB_TOKEN"]
     unless @github_token
-      raise CurlDownloadStrategyError, "Environment variable HOMEBREW_GITHUB_API_TOKEN is required."
+      raise CurlDownloadStrategyError, "Environment variable GITHUB_TOKEN is required."
     end
 
     validate_github_repository_access!
@@ -54,7 +54,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     # We only handle HTTPNotFoundError here,
     # becase AuthenticationFailedError is handled within util/github.
     message = <<~EOS
-      HOMEBREW_GITHUB_API_TOKEN can not access the repository: #{@owner}/#{@repo}
+    GITHUB_TOKEN can not access the repository: #{@owner}/#{@repo}
       This token may not have permission to access the repository or the url of formula may be incorrect.
     EOS
     raise CurlDownloadStrategyError, message
@@ -64,7 +64,7 @@ end
 # GitHubPrivateRepositoryReleaseDownloadStrategy downloads tarballs from GitHub
 # Release assets. To use it, add `:using => :github_private_release` to the URL section
 # of your formula. This download strategy uses GitHub access tokens (in the
-# environment variables HOMEBREW_GITHUB_API_TOKEN) to sign the request.
+# environment variables GITHUB_TOKEN) to sign the request.
 class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDownloadStrategy
   def initialize(url, name, version, **meta)
     super
