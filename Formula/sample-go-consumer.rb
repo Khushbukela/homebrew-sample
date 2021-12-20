@@ -8,7 +8,7 @@ class SampleGoConsumer < Formula
   version "200.0.7"
 
   on_macos do
-    url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.7/sample-go-consumer_Darwin_all.zip"
+    url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.7/sample-go-consumer_Darwin_all.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
     sha256 "01f7d93ea2d3c74baa9e3a298fc7566755853c5d7020044afe293c8bd5f252c1"
 
     def install
