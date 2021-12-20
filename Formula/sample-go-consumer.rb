@@ -6,11 +6,11 @@ require_relative "lib/private"
 class SampleGoConsumer < Formula
   desc "Kafka Consumer for Protobuf"
   homepage "https://github.com/Khushbukela/sample-go-consumer"
-  version "200.0.20"
+  version "200.0.21"
 
   on_macos do
-    url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.20/sample-go-consumer_Darwin_all.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "c926b33ddceb6a4ae7082e5361b3e939f223c25c9151d865455269968908bf39"
+    url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.21/sample-go-consumer_Darwin_all.zip", :using => CurlDownloadStrategy
+    sha256 "3acdd49398e7cb9d3fc6e7965dc7d86bfb76f2aedec07131a368d6c880400a78"
 
     def install
       bin.install "sample-go-consumer"
@@ -19,16 +19,16 @@ class SampleGoConsumer < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.20/sample-go-consumer_Linux_arm64.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "c7ab529a6a49e8673d36150cd37cf7045bc02ecaf3adf6d710fabd9d2f7965ce"
+      url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.21/sample-go-consumer_Linux_arm64.zip", :using => CurlDownloadStrategy
+      sha256 "9d5cbb67676c74fdab00c6209920a8e373c0e81c8df8282d3451fa4889aed490"
 
       def install
         bin.install "sample-go-consumer"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.20/sample-go-consumer_Linux_x86_64.zip", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "8c5c953cb3d81626ca9debdc37a8df5c147f1d95c4fc4b0995cd5c72b8215908"
+      url "https://github.com/khushbukela/sample-go-consumer/releases/download/200.0.21/sample-go-consumer_Linux_x86_64.zip", :using => CurlDownloadStrategy
+      sha256 "a2c04fef423edaf1036f75ae452e12d49153b282c542f7863c89d7579422e967"
 
       def install
         bin.install "sample-go-consumer"
