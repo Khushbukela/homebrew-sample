@@ -4,6 +4,6 @@ class SampleGoConsumer < Formula
   version '200.0.17'
   sha256 "8127c1f9257a02ce47345e801b547060610d0b15e1e458110fba2aeeeb9eea03"
   def install
-      bin.install "sample-go-consumer"
+      bin.install "main"
    end
 end
